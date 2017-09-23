@@ -8,15 +8,17 @@ namespace SportsStore.WebUI.Controllers
 {
     public class NavController : Controller
     {
-        //private IProductRepository repository;
+        private IProductRepository repository;
 
-        //public NavController(IProductRepository repo)
-        //{
-        //    repository = repo;
-        //}
-        public string Menu()
+        public NavController(IProductRepository repo)
         {
-            return "Hello from NavController";
+            repository = repo;
+        }
+        public PartialViewResult Menu(string category = null)
+        {
+            ViewBag.SelectedCategory = category;
+            IEnumerable<string> categories = repository.Products.Select(x => x.Category).Distinct().OrderBy(x => x);
+            return PartialView(categories);
         }
     }
 }
