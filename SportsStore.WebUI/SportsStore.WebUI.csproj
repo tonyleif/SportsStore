@@ -118,6 +118,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Compile Include="Controllers\NavController.cs" />
     <Compile Include="HtmlHelpers\PagingHelpers.cs" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -164,6 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Nav\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SportsStore.Domain\SportsStore.Domain.csproj">
