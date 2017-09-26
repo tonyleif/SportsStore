@@ -30,7 +30,7 @@ namespace SportsStore.Domain.Entities
 
         public decimal ComputeTotalValue()
         {
-            return lineCollection.Sum(e => e.Product.ProductID * e.Quantity);
+            return lineCollection.Sum(e => e.Product.Price * e.Quantity);
         }
 
         public void Clear()
