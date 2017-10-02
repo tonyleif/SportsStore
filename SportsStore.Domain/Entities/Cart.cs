@@ -19,7 +19,7 @@ namespace SportsStore.Domain.Entities
             }
             else
             {
-                line.Quantity = quantity;
+                line.Quantity += quantity;
             }
         }
 
