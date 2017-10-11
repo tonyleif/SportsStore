@@ -35,14 +35,13 @@ namespace SportsStore.UnitTests
         [TestMethod]
         public void Can_Edit_Product()
         {
-            // Arrange - create the mock repository
+            //Arrange
             Mock<IProductRepository> mock = new Mock<IProductRepository>();
             mock.Setup(m => m.Products).Returns(new Product[] {
                 new Product {ProductID = 1, Name = "P1"},
                 new Product {ProductID = 2, Name = "P2"},
                 new Product {ProductID = 3, Name = "P3"},
             });
-            // Arrange - create the controller
             AdminController target = new AdminController(mock.Object);
             // Act
             Product p1 = target.Edit(1).ViewData.Model as Product;
@@ -71,5 +70,4 @@ namespace SportsStore.UnitTests
             Assert.IsNull(result);
         }
     }
-}
 }
